@@ -11,7 +11,7 @@ setup(
         version = '1.0',
         install_requires = [], 
         description = 'my python base object',
-        url = 'https://github.com/zhouxianggen/pyobjec.git', 
+        url = 'https://github.com/zhouxianggen/pyobject.git', 
         author = 'zhouxianggen',
         author_email = 'zhouxianggen@gmail.com',
         classifiers = [ 'Programming Language :: Python :: 3.7',],
