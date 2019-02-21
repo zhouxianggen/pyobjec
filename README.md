@@ -4,10 +4,10 @@ pyobject
 > my python base object
 
 ## `Install`
-` pip install git+ssh://git@github.com:zhouxianggen/pyobject.git`
+` pip install git+https://github.com/zhouxianggen/pyobjec.git`
 
 ## `Upgrade`
-` pip install --upgrade git+ssh://git@github.com:zhouxianggen/pyobject.git`
+` pip install --upgrade git+https://github.com/zhouxianggen/pyobjec.git`
 
 ## `Uninstall`
 ` pip uninstall pyobject`
