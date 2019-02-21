@@ -13,7 +13,7 @@ setup(
         description = 'my python base object',
         url = 'https://github.com/zhouxianggen/pyobjec.git', 
         author = 'zhouxianggen',
-        author_email = 'zhouxg@gmail.com',
+        author_email = 'zhouxianggen@gmail.com',
         classifiers = [ 'Programming Language :: Python :: 3.7',],
         packages = ['pyobject'],
         data_files = [ ],  
