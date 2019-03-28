@@ -34,3 +34,10 @@ class PyObject(object):
             return r
         return wrapper
 
+
+class BaseError(Exception):
+    def __init__(self, error_code, error_desc=''):
+        self.error_code = error_code
+        self.error_desc = error_desc
+        super(BaseError, self).__init__(error_code + error_desc)
+
