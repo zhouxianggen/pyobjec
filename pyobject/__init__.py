@@ -1,5 +1,5 @@
 # coding: utf8 
 
-from .pyobject import PyObject
+from .pyobject import PyObject, BaseError
 
-__all__ = ('PyObject', )
+__all__ = ('PyObject', 'BaseError')
