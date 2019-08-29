@@ -6,19 +6,26 @@ from datetime import datetime
 
 class PyObject(object):
     def __init__(self, log_name='', log_path='', log_level=logging.INFO):
-        self.log = logging.getLogger(log_name or self.__class__.__name__)
-        self.log.setLevel(log_level)
-        self.log.propagate = False
-        if not self.log.handlers:
-            fmt = ('[%(name)-15s %(threadName)-10s %(levelname)-8s '
-                    '%(asctime)s] %(message)s')
-            if log_path:
-                handler = RotatingFileHandler(
-                        log_path, maxBytes=1024*1024*32, backupCount=10)
-            else:
-                handler = logging.StreamHandler()
-            handler.setFormatter(logging.Formatter(fmt))
-            self.log.addHandler(handler)
+        self.setup_log(log_name, log_path, log_level)
+        
+    
+    def setup_log(self, name, path=None, level=logging.INFO):
+        log = logging.getLogger(name or self.__class__.__name__)
+        log.setLevel(level)
+        log.propagate = False
+        for hdlr in log.handlers:
+            log.removeHandler(hdlr)
+
+        fmt = ('[%(name)-15s %(threadName)-10s %(levelname)-8s '
+                '%(asctime)s] %(message)s')
+        if path:
+            hdlr = RotatingFileHandler(
+                    path, maxBytes=1024*1024*64, backupCount=10)
+        else:
+            hdlr = logging.StreamHandler()
+        hdlr.setFormatter(logging.Formatter(fmt))
+        log.addHandler(hdlr)
+        self.log = log
 
 
     @classmethod

@@ -16,4 +16,10 @@ class MyObject(PyObject):
 a = MyObject()
 a.foo()
 a.bar()
+a.setup_log(name="xman")
+a.log.info('who am i')
+a.setup_log(name="xman2", path="/logs/xman2")
+a.log.info('who am i 2')
+a.setup_log(name="xman3", path=None)
+a.log.info('who am i 3')
 
