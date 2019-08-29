@@ -9,7 +9,7 @@ class PyObject(object):
         self.setup_log(log_name, log_path, log_level)
         
     
-    def setup_log(self, name, path=None, level=logging.INFO):
+    def setup_log(self, name='', path=None, level=logging.INFO):
         log = logging.getLogger(name or self.__class__.__name__)
         log.setLevel(level)
         log.propagate = False
